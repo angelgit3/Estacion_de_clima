@@ -31,8 +31,8 @@ const char* ssid = "wawas";
 const char* password = "463728195";
 // ⚠️ IMPORTANTE: Reemplazar con las credenciales reales de tu proyecto Supabase
 // Obtener en: https://supabase.com/dashboard/project/wayhuyteogutxqahdgla/settings/api
-const char* supabase_url = "https://TU_PROJECT_ID.supabase.co/rest/v1/weather_logs";
-const char* supabase_key = "TU_SUPABASE_ANON_KEY";
+const char* supabase_url = "https://wayhuyteogutxqahdgla.supabase.co/rest/v1/weather_logs";
+const char* supabase_key = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6IndheWh1eXRlb2d1dHhxYWhkZ2xhIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzU5NDkzMjIsImV4cCI6MjA5MTUyNTMyMn0.MYbiIW3JBf_K4C_2ZP1pHSW-MZfoDtADch_fdEbkD48";
 
 // ============================================================
 // --- Mapa de Pines (design.md) ---

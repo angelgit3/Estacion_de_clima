@@ -17,10 +17,8 @@ import math
 # ============================================================
 # --- CONFIGURACIÓN ---
 # ============================================================
-# ⚠️ IMPORTANTE: Configurar variables de entorno o reemplazar valores
-# Obtener en: https://supabase.com/dashboard/project/wayhuyteogutxqahdgla/settings/api
-SUPABASE_URL = os.environ.get("SUPABASE_URL", "https://TU_PROJECT_ID.supabase.co/rest/v1/weather_logs")
-SUPABASE_KEY = os.environ.get("SUPABASE_KEY", "TU_SUPABASE_ANON_KEY")
+SUPABASE_URL = "https://wayhuyteogutxqahdgla.supabase.co/rest/v1/weather_logs"
+SUPABASE_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6IndheWh1eXRlb2d1dHhxYWhkZ2xhIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzU5NDkzMjIsImV4cCI6MjA5MTUyNTMyMn0.MYbiIW3JBf_K4C_2ZP1pHSW-MZfoDtADch_fdEbkD48"
 CHANNEL = "myDAQ1/ai0"  # Ajustar según el nombre en NI MAX
 
 SAMPLE_RATE = 1000          # Hz (según design.md)

@@ -1,0 +1,48 @@
+# Dependencies
+node_modules/
+dashboard/node_modules/
+
+# Build output
+dashboard/.next/
+dashboard/out/
+
+# Environment variables (SENSITIVE - never commit)
+.env
+.env.local
+.env.production.local
+.env.development.local
+.env.test
+dashboard/.env
+dashboard/.env.local
+dashboard/.env.production.local
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+*.egg-info/
+dist/
+build/
+.venv/
+venv/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# NI-DAQmx config (if any local configs)
+*.tdms
+
+# Temporary files
+*.tmp
+*.temp

@@ -20,8 +20,8 @@ import time
 SUPABASE_URL = "https://wayhuyteogutxqahdgla.supabase.co/rest/v1/weather_logs"
 SUPABASE_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6IndheWh1eXRlb2d1dHhxYWhkZ2xhIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzU5NDkzMjIsImV4cCI6MjA5MTUyNTMyMn0.MYbiIW3JBf_K4C_2ZP1pHSW-MZfoDtADch_fdEbkD48"
 
-LAT = 20.0795    # 20°04'46.3"N
-LON = -98.3685   # 98°22'06.7"W
+LAT = 20.0758    # 20°04'32.9"N
+LON = -98.3999   # 98°23'59.7"W
 PAST_DAYS = 7    # Últimos 7 días
 
 # Open-Meteo API (gratis, sin API key)
@@ -80,7 +80,16 @@ def interpolate_hourly_to_interval(hourly_data, interval_minutes=15):
             # Interpolación lineal + variación sensor realista
             temp = t0 + (t1 - t0) * frac + random.uniform(-0.3, 0.3)
             hum = h0 + (h1 - h0) * frac + random.uniform(-1.0, 1.0)
-            pres = p0 + (p1 - p0) * frac + random.uniform(-0.2, 0.2)
+            
+            # Corrección de presión MSL a nivel de estación (altitud 2157m)
+            # Fórmula: P_station = P_msl * (1 - 0.0065 * h / T0)^(g*M/(R*0.0065))
+            # Simplificada: ~12% menos presión por cada 1000m
+            # A 2157m: factor ≈ 0.78
+            ALTITUDE_M = 2157
+            pressure_msl = p0 + (p1 - p0) * frac
+            pressure_station = pressure_msl * (1 - 0.0065 * ALTITUDE_M / 288.15) ** 5.255
+            pres = pressure_station + random.uniform(-0.2, 0.2)
+            
             wind = max(0, w0 + (w1 - w0) * frac + random.uniform(-0.5, 0.5))
             rad = max(0, r0 + (r1 - r0) * frac + random.uniform(-5, 5))
             day = 1 if (d0 + d1) > 0 else 0  # Si al menos uno es día

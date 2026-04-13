@@ -32,9 +32,9 @@ export const SENSOR_THRESHOLDS: Record<
     critical: [0, 100],     // %: extreme
   },
   pressure: {
-    normal: [760, 810],     // hPa: adjusted for 2157m altitude (~790 hPa typical)
-    warning: [750, 820],    // hPa: weather system changes
-    critical: [740, 830],   // hPa: significant weather events
+    normal: [780, 810],     // hPa: station pressure at 2157m (~790 hPa typical)
+    warning: [770, 820],    // hPa: weather system changes
+    critical: [760, 830],   // hPa: significant weather events
   },
   wind_speed: {
     normal: [0, 25],        // km/h: light to moderate breeze
